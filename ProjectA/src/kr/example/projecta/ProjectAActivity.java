@@ -1,0 +1,59 @@
+package kr.example.projecta;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class ProjectAActivity extends Activity implements OnClickListener{
+	static final int[] BUTTONS = 
+		{
+			R.id.button1,
+			R.id.button2,
+			R.id.button3
+		};
+	
+	TextView id;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main);
+		
+		for(int btnId:BUTTONS){
+			Button tmpButton = (Button) findViewById(btnId);
+			tmpButton.setOnClickListener(this);
+		}
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.project_a, menu);
+		return true;
+	}
+	
+	@Override
+	public void onClick(View v) {
+		id = (TextView) findViewById(R.id.textView1);
+		
+		switch(v.getId()){
+		case R.id.button1:
+			Toast.makeText(ProjectAActivity.this, "가위", Toast.LENGTH_SHORT).show();
+			id.setText("가위");
+			break;
+		case R.id.button2:
+			Toast.makeText(ProjectAActivity.this, "바위", Toast.LENGTH_SHORT).show();
+			id.setText("바위");
+			break;
+		case R.id.button3:
+			Toast.makeText(ProjectAActivity.this, "보", Toast.LENGTH_SHORT).show();
+			id.setText("보");
+			break;
+		}
+	}
+}
