@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ScrollView/res/layout/activity_scroll_view.xml&apos; to &apos;mail.xml&apos;" description="Rename resource &apos;activity_scroll_view.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="res/layout/activity_scroll_view.xml" name="mail.xml" stamp="1365401268040" updateReferences="true"/>
+</session>
